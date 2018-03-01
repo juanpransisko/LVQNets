@@ -38,8 +38,8 @@ public class Data {
 		this.type = type;
 		// this.is_winner = 0;	// Not winner
 	}
-        
-        public Data() {}
+		
+	public Data() {}
 
 	// Method for changing / updating values of the weight
 	//	For neurons 
@@ -49,12 +49,12 @@ public class Data {
 
 	// This is to generate random weights
 	public void init_weight(int limit1, int limit2) {
-                
+				
 		if (this.get_type() != Type.NEURON) {
 			System.err.println("Invalid usage");
 			System.exit(0);
 		}
-                
+				
 		Random rand = new Random();
 		double attr1 = (double) rand.nextInt((limit1 - 1) + 1) + 1;
 		double attr2 = (double) rand.nextInt((limit2 - 1) + 1) + 1;
@@ -84,8 +84,8 @@ public class Data {
 
 	public void set_attrib(double[] attrib) {
 		this.attrib = attrib.clone();
-                // this.attrib = Arrays.copyOf(attrib, attrib.length);
-                // System.arraycopy(attrib, 0, this.attrib, 0, attrib.length);
+				// this.attrib = Arrays.copyOf(attrib, attrib.length);
+				// System.arraycopy(attrib, 0, this.attrib, 0, attrib.length);
 	}
 
 	// category 

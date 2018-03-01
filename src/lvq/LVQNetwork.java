@@ -20,7 +20,7 @@ public class LVQNetwork {
 
 	// This holds the number of iterations for training the network
 	//	Default is 100
-	private int iterations = 1;
+	private int iterations = 100;
 
 	// Iteration counter
 	private int itr;	
@@ -41,13 +41,10 @@ public class LVQNetwork {
 	// Holds the chosen random input
 	private Data rand_input = null;
 
-	// Holds the winner neuron
-	// private Data winner_neuron = null;
-
 	// Holds the new weight
 	private double[] new_weight;
 
-	// private int lim1, lim2;
+	private int limit1, limit2;
 
 	// Constructor for LVQNetworks ----------------------------------------
 	//	Constructor to set the learning rate and iterations
@@ -60,8 +57,7 @@ public class LVQNetwork {
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
-		System.out.println("No. of Clusters: " + this.clusters);
-		
+		System.out.println("No. of Clusters: " + this.clusters + "\n");
 	}
 
 	// 	This requires the number of n_neurons and clusters, 
@@ -75,23 +71,25 @@ public class LVQNetwork {
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
-		System.out.println("No. of Clusters: " + this.clusters);
+		System.out.println("No. of Clusters: " + this.clusters + "\n");
 	}
 
 	//	This requires the number of iterations and learning rate
 	//		nuber of n_neurons and cluster
-	public LVQNetwork(double learn_rate, int iter, int n_neurons, int n_clusters, int cat_type) {
+	public LVQNetwork(double learn_rate, int iter, int n_neurons, int n_clusters, int cat_type, int lim1, int lim2) {
 		this.learning_rate = learn_rate;
 		this.iterations = iter;
 		this.n_neurons = n_neurons;
 		this.clusters = n_clusters;
 		this.category_type = cat_type;
+		this.limit1 = lim1;
+		this.limit2 = lim2;
 				
 		System.out.println("LVQ Network initialized with:");
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
-		System.out.println("No. of Clusters: " + this.clusters);
+		System.out.println("No. of Clusters: " + this.clusters + "\n");
 	}
 		// Constructor for LVQNetworks ----------------------------------------
 
@@ -155,7 +153,7 @@ public class LVQNetwork {
 	// This method is to train the lvq network
 	public void train(Data[] enpot, int bound) {
 
-		while (this.itr != this.iterations) {
+/*		while (this.itr != this.iterations) {
 			// Get random input
 			int index = this.get_rand_input(bound);	// 1000 inputs
 			rand_input = enpot[index];
@@ -184,6 +182,16 @@ public class LVQNetwork {
 
 			this.itr ++;	// increment iteration counter
 			// this.learning_rate = (this.learning_rate * 0.5);	// decrease learning rate
+		}
+*/
+
+		Data curr_input = new Data();
+
+		while (this.itr != this.iterations)	{
+
+
+
+			this.itr ++;
 		}
 
 		for (int i = 0; i < neurons.length; i ++) {
