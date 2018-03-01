@@ -1,6 +1,6 @@
 # LVQNets
 
-# Library for implementation of Learning Vector Quantization - II (LVQ II)
+### Library for implementation of Learning Vector Quantization - II (LVQ II)
 
 LVQ II is a supervised version of the LVQ by Kohonen. Here, the LVQ neural network
 assumes that all input patterns are known 
