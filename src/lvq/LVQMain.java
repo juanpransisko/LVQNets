@@ -14,7 +14,7 @@ public class LVQMain {
 		 *		neurons:		9
 		 *		clusters:		3 (Murder, Rape, Robbery)
 		 *		type:			0 			*/
-		LVQNetwork crime_lvq = new LVQNetwork(0.9, 30000, 60, 3, 0, 700, 1);
+		LVQNetwork crime_lvq = new LVQNetwork(0.9, 10000, 60, 3, 0, 700, 1);
 	
 		/** Victim gender lvq network
 		 *		learning rate:	0.9

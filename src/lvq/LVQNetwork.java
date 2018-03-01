@@ -162,9 +162,9 @@ public class LVQNetwork {
 			int winner_pos = this.get_winner_neuron(rand_input, neurons); 
 
 			// Log
-			System.out.println("Iteration: " + (this.itr + 1));
-			System.out.println("\t| Rand Input attrib: " + Arrays.toString(rand_input.get_attrib()) + "\t| category: " + rand_input.get_category());
-			System.out.println("\t| Winner neuron attrib: " + Arrays.toString(neurons[winner_pos].get_attrib()) + "\t| category: " + neurons[winner_pos].get_category());
+			System.out.print("Iter: " + (this.itr + 1));
+			System.out.print(" | R.INP_ATR: " + Arrays.toString(rand_input.get_attrib()) + " | INP_CAT: " + rand_input.get_category());
+			System.out.println(" | W.NEU_ATR: " + Arrays.toString(neurons[winner_pos].get_attrib()) + " | NEU_CAT: " + neurons[winner_pos].get_category());
 			
 			// Check category, get new weights
 			if (neurons[winner_pos].get_category() == rand_input.get_category()) {
@@ -178,7 +178,7 @@ public class LVQNetwork {
 			// Update weight
 			neurons[winner_pos].set_attrib(new_weight);
 
-			System.out.println("\t| Updated attrib: " + Arrays.toString(neurons[winner_pos].get_attrib()) + "\n");
+			System.out.println("\t| Updated attrib: " + Arrays.toString(neurons[winner_pos].get_attrib()) + "");
 
 			this.itr ++;	// increment iteration counter
 			this.learning_rate = (this.learning_rate * 0.5);	// decrease learning rate
