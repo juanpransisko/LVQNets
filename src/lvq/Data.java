@@ -49,22 +49,34 @@ public class Data {
 
 	// This is to generate random weights
 	public void init_weight(int limit1, int limit2) {
-				
 		if (this.get_type() != Type.NEURON) {
 			System.err.println("Invalid usage");
 			System.exit(0);
 		}
 				
 		Random rand = new Random();
-		double attr1 = (double) rand.nextInt((limit1 - 1) + 1) + 1;
-		double attr2 = (double) rand.nextInt((limit2 - 1) + 1) + 1;
+		double attr1 = (double) showRandomInteger(0, limit1, rand);
+		double attr2 = (double) showRandomInteger(0, limit2, rand);
 
 		this.set_attrib(new double[] {attr1, attr2});
 	}
 
-	// This is to set the category of the neuron
-	// public 
-
+        
+        // From http://www.javapractices.com/topic/TopicAction.do?Id=62
+	private static int showRandomInteger(int aStart, int aEnd, Random aRandom){
+		if (aStart > aEnd) {
+			throw new IllegalArgumentException("Start cannot exceed End.");
+		}
+	
+		//get the range, casting to long to avoid overflow problems
+		long range = (long)aEnd - (long)aStart + 1;
+	
+		// compute a fraction of the range, 0 <= frac < range
+		long fraction = (long)(range * aRandom.nextDouble());
+		int randomNumber =  (int)(fraction + aStart);    
+		
+		return randomNumber;
+	}
 	
 
 	// ----- Getters and Setters -----
