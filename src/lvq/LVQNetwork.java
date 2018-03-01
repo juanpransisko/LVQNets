@@ -162,6 +162,7 @@ public class LVQNetwork {
 			int winner_pos = this.get_winner_neuron(rand_input, neurons); 
 
 			// Log
+                        
 			System.out.print("Iter: " + (this.itr + 1));
 			System.out.print(" | R.INP_ATR: " + Arrays.toString(rand_input.get_attrib()) + " | INP_CAT: " + rand_input.get_category());
 			System.out.println(" | W.NEU_ATR: " + Arrays.toString(neurons[winner_pos].get_attrib()) + " | NEU_CAT: " + neurons[winner_pos].get_category());
