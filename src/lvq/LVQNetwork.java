@@ -23,7 +23,7 @@ public class LVQNetwork {
 	private int iterations = 100;
 
 	// Iteration counter
-	private int itr;	
+	private int itr = 0;	
 		
 	// The cluster n_neurons
 	private Data[] neurons;
@@ -124,7 +124,7 @@ public class LVQNetwork {
 		Data[] neu = new Data[this.get_neuron_count()];
 		for (int idx = 0; idx < neu.length; idx ++) {
 			neu[idx] = new Data(Type.NEURON);
-			neu[idx].init_weight(1,700);
+			neu[idx].init_weight(this.get_limit1(), this.get_limit2());
 		}
 		
 		// Assign Category to neuron 	OPTIMIZE THIS PART
@@ -153,7 +153,7 @@ public class LVQNetwork {
 	// This method is to train the lvq network
 	public void train(Data[] enpot, int bound) {
 
-/*		while (this.itr != this.iterations) {
+		while (this.itr != this.iterations) {
 			// Get random input
 			int index = this.get_rand_input(bound);	// 1000 inputs
 			rand_input = enpot[index];
@@ -181,19 +181,9 @@ public class LVQNetwork {
 			System.out.println("\t| Updated attrib: " + Arrays.toString(neurons[winner_pos].get_attrib()) + "\n");
 
 			this.itr ++;	// increment iteration counter
-			// this.learning_rate = (this.learning_rate * 0.5);	// decrease learning rate
+			this.learning_rate = (this.learning_rate * 0.5);	// decrease learning rate
 		}
-*/
-
-		Data curr_input = new Data();
-
-		while (this.itr != this.iterations)	{
-
-
-
-			this.itr ++;
-		}
-
+		
 		for (int i = 0; i < neurons.length; i ++) {
 			System.out.print("Neuron no. " + i);
 			System.out.print("| Category: " + neurons[i].get_category());
@@ -297,4 +287,23 @@ public class LVQNetwork {
 	public void set_category_type(int type) {
 		this.category_type = type;
 	}
+
+	// Limits
+	public int get_limit1() {
+		return this.limit1;
+	}
+		
+	public void set_limit1(int limit1) {
+		this.limit1 = limit1;
+	}
+
+	public int get_limit2() {
+		return this.limit2;
+	}
+		
+	public void set_limit2(int limit2) {
+		this.limit2 = limit2;
+	}
+
+
 }
