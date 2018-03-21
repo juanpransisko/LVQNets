@@ -7,4 +7,6 @@ class Fuzzy {
 
 	}
 
+	// public double fuzzify
+
 }

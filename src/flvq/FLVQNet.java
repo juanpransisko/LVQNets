@@ -53,7 +53,7 @@ public class FLVQNet {
 		this.iterations = iter;
 		this.category_type = 0;
 				
-		System.out.println("LVQ Network initialized with:");
+		System.out.println("FLVQ Network initialized with:");
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
@@ -67,7 +67,7 @@ public class FLVQNet {
 		this.iterations = 100;
 		this.category_type = 0;
 				
-		System.out.println("LVQ Network initialized with:");
+		System.out.println("FLVQ Network initialized with:");
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
@@ -85,7 +85,7 @@ public class FLVQNet {
 		this.limit1 = lim1;
 		this.limit2 = lim2;
 				
-		System.out.println("LVQ Network initialized with:");
+		System.out.println("FLVQ Network initialized with:");
 		System.out.println("Learning rate: " + this.learning_rate);
 		System.out.println("Iterations: " + this.iterations);
 		System.out.println("No. of Neurons: " + this.n_neurons);
@@ -105,7 +105,7 @@ public class FLVQNet {
 	}
 	
 
-			
+
 	//  This is for initializing the LVQ neurons
 	//		Check all parameters, place the n_neurons, initialize weights, specify output
 	//		Instantiate the n_neurons, normalize the data inputs
