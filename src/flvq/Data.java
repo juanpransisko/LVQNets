@@ -1,5 +1,6 @@
-package lvq;
+package flvq;
 
+import flvq.*;
 import java.util.*;
 
 /*	Data Class
@@ -44,7 +45,7 @@ public class Data {
 
 	// Method for changing / updating values of the weight
 	//	For neurons 
-	public void update_attrib_values(LVQNetwork net, double[] new_values) {
+	public void update_attrib_values(FLVQNet net, double[] new_values) {
 		this.attrib = new_values;
 	}
 
