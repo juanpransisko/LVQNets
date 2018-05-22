@@ -1,4 +1,4 @@
-package lvq;
+//package lvq;
 
 import java.util.*;
 
